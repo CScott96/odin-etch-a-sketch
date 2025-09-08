@@ -16,7 +16,9 @@ function populateBoard(divsPerSide = 16) {
     div.style.width = divWidth + "px";
     div.style.height = divWidth + "px";
     div.addEventListener("mouseover", () => {
-      div.classList.add("drawn");
+      const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+      //div.classList.add("drawn");
+      div.style.backgroundColor = "#" + randomColor;
     });
     //div.innerText = `I am div no${i}`;
     boardElems.push(div);
