@@ -15,11 +15,15 @@ function populateBoard(divsPerSide = 16) {
     const div = document.createElement("div");
     div.style.width = divWidth + "px";
     div.style.height = divWidth + "px";
-    div.addEventListener("mouseover", () => {
-      const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-      //div.classList.add("drawn");
-      div.style.backgroundColor = "#" + randomColor;
-    });
+    div.addEventListener(
+      "mouseover",
+      () => {
+        const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        //div.classList.add("drawn");
+        div.style.backgroundColor = "#" + randomColor;
+      },
+      { once: true },
+    );
     //div.innerText = `I am div no${i}`;
     boardElems.push(div);
   }
