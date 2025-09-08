@@ -1,4 +1,5 @@
 const boardCont = document.querySelector("#SketchBoard");
+const boardWidth = boardCont.offsetWidth;
 const titleSection = document.querySelector("#Header");
 
 function initialise() {
@@ -11,8 +12,11 @@ initialise();
 
 function populateBoard(totalDivs = 16) {
   let boardElems = [];
+  let divWidth = boardWidth / totalDivs;
   for (var i = 0; i < totalDivs; i++) {
     const div = document.createElement("div");
+    div.style.width = divWidth + "px";
+    div.style.height = divWidth + "px";
     //div.innerText = `I am div no${i}`;
     boardElems.push(div);
   }
