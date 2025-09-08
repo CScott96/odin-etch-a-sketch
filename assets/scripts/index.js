@@ -10,9 +10,10 @@ function initialise() {
 }
 initialise();
 
-function populateBoard(totalDivs = 16) {
+function populateBoard(divsPerSide = 16) {
   let boardElems = [];
-  let divWidth = boardWidth / totalDivs;
+  let divWidth = boardWidth / divsPerSide;
+  const totalDivs = divsPerSide * divsPerSide;
   for (var i = 0; i < totalDivs; i++) {
     const div = document.createElement("div");
     div.style.width = divWidth + "px";
