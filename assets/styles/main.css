@@ -33,6 +33,7 @@ body {
                 border: 1px solid var(--black);
                 background-color: var(--white);
                 transition: background-color 200ms ease-out;
+                opacity: 1;
                 &.drawn {
                     background-color: var(--green);
                 }

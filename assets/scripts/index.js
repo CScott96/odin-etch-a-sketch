@@ -24,6 +24,13 @@ function populateBoard(divsPerSide = 16) {
       },
       { once: true },
     );
+    div.addEventListener("mouseover", () => {
+      let opacity = window.getComputedStyle(div).getPropertyValue("opacity");
+      if (opacity > 0 && opacity <= 1) {
+        opacity = opacity - 0.1;
+      }
+      div.style.opacity = opacity;
+    });
     //div.innerText = `I am div no${i}`;
     boardElems.push(div);
   }
