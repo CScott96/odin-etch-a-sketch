@@ -1,6 +1,7 @@
 body {
     --black: #333;
     --white: #faf0e6;
+    --green: #157a6e;
     background-color: var(--black);
     color: var(--white);
     font-family:
@@ -29,7 +30,12 @@ body {
             & > div {
                 display: inline-block;
                 box-sizing: border-box;
+                border: 1px solid var(--black);
                 background-color: var(--white);
+                transition: background-color 200ms ease-out;
+                &:hover {
+                    background-color: var(--green);
+                }
             }
         }
     }
