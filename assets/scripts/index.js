@@ -3,9 +3,6 @@ const boardWidth = boardCont.offsetWidth;
 const titleSection = document.querySelector("#Header");
 
 function initialise() {
-  const title = document.createElement("h1");
-  title.innerText = "Hello world";
-  titleSection.appendChild(title);
   populateBoard();
 }
 initialise();
@@ -24,4 +21,27 @@ function populateBoard(divsPerSide = 16) {
   boardElems.forEach((elem) => {
     boardCont.appendChild(elem);
   });
+}
+function deleteBoard() {
+  boardCont.innerHTML = "";
+}
+
+function getUserBoardWidth() {
+  let boardChoice = parseInt(
+    prompt(
+      "Enter your number of grid squares for a side, between 0 and 100",
+      "16",
+    ),
+  );
+  validateUserChoice(boardChoice);
+}
+
+function validateUserChoice(choice) {
+  if (Number.isInteger(choice) && choice > 0 && choice < 100) {
+    console.log(choice);
+    deleteBoard();
+    populateBoard(choice);
+  } else {
+    getUserBoardWidth();
+  }
 }
