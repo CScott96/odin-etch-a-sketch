@@ -15,6 +15,9 @@ function populateBoard(divsPerSide = 16) {
     const div = document.createElement("div");
     div.style.width = divWidth + "px";
     div.style.height = divWidth + "px";
+    div.addEventListener("mouseover", () => {
+      div.classList.add("drawn");
+    });
     //div.innerText = `I am div no${i}`;
     boardElems.push(div);
   }
